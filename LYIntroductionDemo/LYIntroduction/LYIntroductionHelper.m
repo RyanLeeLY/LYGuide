@@ -19,16 +19,15 @@
 
 @implementation LYIntroductionHelper
 
-static LYIntroductionHelper *introductionHelper = nil;
+static LYIntroductionHelper *defaultHelper = nil;
 +(LYIntroductionHelper *) shared{
     static dispatch_once_t token;
     dispatch_once(&token,^{
-        if(introductionHelper == nil){
-            introductionHelper = [[LYIntroductionHelper alloc]init];
-            introductionHelper.introductionView.delegate = introductionHelper;
+        if(defaultHelper == nil){
+            defaultHelper = [[LYIntroductionHelper alloc]init];
         }
     } );
-    return introductionHelper;
+    return defaultHelper;
 }
 
 - (void)addHintViewWithPositionX:(CGFloat)x Y:(CGFloat)y widthRatio:(CGFloat)wRatio heightRatio:(CGFloat)hRatio showNow:(BOOL)showNow tapOnHint:(void (^)(BOOL))tapBlock {
@@ -60,6 +59,33 @@ static LYIntroductionHelper *introductionHelper = nil;
 - (void)reset {
     tapOnHint = nil;
     [self.introductionView removeFromSuperview];
+    self.introductionView = nil;
+}
+
++(id)allocWithZone:(struct _NSZone *)zone{
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        if(defaultHelper == nil){
+            defaultHelper = [super allocWithZone:zone];
+        }
+    });
+    return defaultHelper;
+}
+
+- (instancetype)init{
+    self = [super init];
+    if(self){
+        self.introductionView.delegate = defaultHelper;
+    }
+    return self;
+}
+
+- (id)copy{
+    return self;
+}
+
+- (id)mutableCopy{
+    return self;
 }
 
 #pragma getter && setter
@@ -68,6 +94,11 @@ static LYIntroductionHelper *introductionHelper = nil;
         _introductionView = [[LYIntroductionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     }
     return _introductionView;
+}
+
+#pragma LYIntroductionDelegate
+- (void) tapEventOnHintView:(BOOL)onHintView{
+    tapOnHint(onHintView);
 }
 
 #pragma utils
@@ -92,11 +123,6 @@ static LYIntroductionHelper *introductionHelper = nil;
         result = window.rootViewController;
     }
     return result;
-}
-
-#pragma LYIntroductionDelegate
-- (void) tapEventOnHintView:(BOOL)onHintView{
-    tapOnHint(onHintView);
 }
 
 @end
