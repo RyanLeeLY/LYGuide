@@ -15,6 +15,10 @@
 		8A329F081DC4D46600194C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A329F061DC4D46600194C51 /* LaunchScreen.storyboard */; };
 		8A329F131DC4D46600194C51 /* LYIntroductionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F121DC4D46600194C51 /* LYIntroductionDemoTests.m */; };
 		8A329F1E1DC4D46600194C51 /* LYIntroductionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F1D1DC4D46600194C51 /* LYIntroductionDemoUITests.m */; };
+		8A329F471DC538B700194C51 /* LYIntroductionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F401DC538B700194C51 /* LYIntroductionHelper.m */; };
+		8A329F481DC538B700194C51 /* LYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F421DC538B700194C51 /* LYIntroductionView.m */; };
+		8A329F491DC538B700194C51 /* UIBorderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F441DC538B700194C51 /* UIBorderImageView.m */; };
+		8A329F4A1DC538B700194C51 /* UIView+BorderPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F461DC538B700194C51 /* UIView+BorderPattern.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		8A329F191DC4D46600194C51 /* LYIntroductionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYIntroductionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A329F1D1DC4D46600194C51 /* LYIntroductionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionDemoUITests.m; sourceTree = "<group>"; };
 		8A329F1F1DC4D46600194C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A329F3F1DC538B700194C51 /* LYIntroductionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYIntroductionHelper.h; sourceTree = "<group>"; };
+		8A329F401DC538B700194C51 /* LYIntroductionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionHelper.m; sourceTree = "<group>"; };
+		8A329F411DC538B700194C51 /* LYIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYIntroductionView.h; sourceTree = "<group>"; };
+		8A329F421DC538B700194C51 /* LYIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionView.m; sourceTree = "<group>"; };
+		8A329F431DC538B700194C51 /* UIBorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBorderImageView.h; sourceTree = "<group>"; };
+		8A329F441DC538B700194C51 /* UIBorderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBorderImageView.m; sourceTree = "<group>"; };
+		8A329F451DC538B700194C51 /* UIView+BorderPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BorderPattern.h"; sourceTree = "<group>"; };
+		8A329F461DC538B700194C51 /* UIView+BorderPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BorderPattern.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,8 @@
 		8A329EF71DC4D46600194C51 /* LYIntroductionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8A329F3E1DC538B700194C51 /* LYIntroduction */,
+				8A329F2E1DC4D4B600194C51 /* LYIntroductionDemo */,
 				8A329EFB1DC4D46600194C51 /* AppDelegate.h */,
 				8A329EFC1DC4D46600194C51 /* AppDelegate.m */,
 				8A329EFE1DC4D46600194C51 /* ViewController.h */,
@@ -138,6 +152,28 @@
 				8A329F1F1DC4D46600194C51 /* Info.plist */,
 			);
 			path = LYIntroductionDemoUITests;
+			sourceTree = "<group>";
+		};
+		8A329F2E1DC4D4B600194C51 /* LYIntroductionDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LYIntroductionDemo;
+			sourceTree = "<group>";
+		};
+		8A329F3E1DC538B700194C51 /* LYIntroduction */ = {
+			isa = PBXGroup;
+			children = (
+				8A329F3F1DC538B700194C51 /* LYIntroductionHelper.h */,
+				8A329F401DC538B700194C51 /* LYIntroductionHelper.m */,
+				8A329F411DC538B700194C51 /* LYIntroductionView.h */,
+				8A329F421DC538B700194C51 /* LYIntroductionView.m */,
+				8A329F431DC538B700194C51 /* UIBorderImageView.h */,
+				8A329F441DC538B700194C51 /* UIBorderImageView.m */,
+				8A329F451DC538B700194C51 /* UIView+BorderPattern.h */,
+				8A329F461DC538B700194C51 /* UIView+BorderPattern.m */,
+			);
+			path = LYIntroduction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,8 +309,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A329F4A1DC538B700194C51 /* UIView+BorderPattern.m in Sources */,
+				8A329F471DC538B700194C51 /* LYIntroductionHelper.m in Sources */,
 				8A329F001DC4D46600194C51 /* ViewController.m in Sources */,
+				8A329F491DC538B700194C51 /* UIBorderImageView.m in Sources */,
 				8A329EFD1DC4D46600194C51 /* AppDelegate.m in Sources */,
+				8A329F481DC538B700194C51 /* LYIntroductionView.m in Sources */,
 				8A329EFA1DC4D46600194C51 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
