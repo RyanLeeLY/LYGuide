@@ -41,7 +41,7 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
 
 ## Demo
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/DemoScreenShot0.png)
-#### Show hint
+#### LYIntroduction View(效果展示)
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/DemoScreenShot1.png)
-#### Self-adaptaion
+#### Self-adaptaion（自适应）
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/DemoScreenShot2.png)
