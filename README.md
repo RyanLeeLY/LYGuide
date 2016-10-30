@@ -3,12 +3,12 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
 ***
 ## Usage
 ```objective-c
-- (void)viewDidAppear:(BOOL)animated{
-    [LYIntroductionHelper shared].hintBorderScale = 1.5f;
+[LYIntroductionHelper shared].hintBorderScale = 1.5f;
     [LYIntroductionHelper shared].hintCornerRadius = 20.f;
     [LYIntroductionHelper shared].hintBackgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
     [LYIntroductionHelper shared].hintBorderColor = [UIColor redColor];
     [LYIntroductionHelper shared].baseBackgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
+    [LYIntroductionHelper shared].isAnimated = NO;
     
     // Set the hint's position and the tap-Event callback block.
     [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 hintText:@"This is an introduction tutorial by LYInrtoduction. Please tap the button." showNow:YES tapOnHint:^(BOOL onHint){
