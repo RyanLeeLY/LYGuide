@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIBorderImageView : UIImageView
-- (void)setDashLineBorderWithColor:(UIColor *)color;
+- (void)setDashLineBorderWithColor:(UIColor *)color background:(UIColor *)bgColor cornerRadius:(CGFloat)cornerRadius;
 @end

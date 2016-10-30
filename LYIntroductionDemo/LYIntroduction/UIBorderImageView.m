@@ -7,6 +7,9 @@
 //
 
 #import "UIBorderImageView.h"
+
+static const CGFloat lineWidth = 2.f;
+
 @interface UIBorderImageView()
 
 @property (strong,nonatomic) CAShapeLayer *dashBorder;
@@ -23,17 +26,15 @@
 }
 */
 
-- (void)setDashLineBorderWithColor:(UIColor *)color{
+- (void)setDashLineBorderWithColor:(UIColor *)color background:(UIColor *)bgColor cornerRadius:(CGFloat)cornerRadius{
     [self.dashBorder removeFromSuperlayer];
     self.dashBorder.strokeColor = [color CGColor];
-    self.dashBorder.fillColor = nil;
-    self.dashBorder.path = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+    self.dashBorder.fillColor = [bgColor CGColor];
+    self.dashBorder.path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:cornerRadius].CGPath;
     self.dashBorder.frame = self.bounds;
-    self.dashBorder.lineWidth = 1.f;
-    self.dashBorder.lineCap = @"square";
-    self.dashBorder.lineDashPattern = @[@2, @4];
-    
-    self.dashBorder.cornerRadius = 50.f;
+    self.dashBorder.lineWidth = lineWidth;
+    self.dashBorder.lineCap = kCALineCapRound;
+    self.dashBorder.lineDashPattern = @[@4, @6.5];
     [self.layer addSublayer:self.dashBorder];
 }
 
