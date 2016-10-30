@@ -2,7 +2,7 @@
 LYIntroduction is an iOS class group that you can easily add Introduction Tutorial to your App or hint something important on the screen.
 ***
 ## Usage
-```objective-c
+```obj-c
     /* Set property to customize your introduction tutorial && Each property has default value.So it's OK if don't set any property.
      */
 //    [LYIntroductionHelper shared].hintBorderScale = 1.5f;
@@ -13,7 +13,7 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
 //    [LYIntroductionHelper shared].isAnimated = NO;
     
     // Set the hint's position and the tap-Event callback block.
-    [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 hintText:@"This is an introduction tutorial by LYInrtoduction. Please tap the button." showNow:YES tapOnHint:^(BOOL onHint){
+    void (^hintHandler)(BOOL) = ^(BOOL onHint){
         if(onHint){
             [[LYIntroductionHelper shared] dismissIntroduction]; //Dissmiss the introduction tutorial
             NSLog(@"Tap on hint");
@@ -21,7 +21,8 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
             NSLog(@"Not Tap on hint");
         }
         
-    }];
+    };
+    [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 hintText:@"This is an introduction tutorial by LYInrtoduction. Please tap the button." showNow:YES tapOnHint:hintHandler];
     
     /* Another usage
      
@@ -34,7 +35,6 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
      }];
      */
 }
-
 ```
 
 ## Demo

@@ -39,7 +39,7 @@
 //    [LYIntroductionHelper shared].isAnimated = NO;
     
     // Set the hint's position and the tap-Event callback block.
-    [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 hintText:@"This is an introduction tutorial by LYInrtoduction. Please tap the button." showNow:YES tapOnHint:^(BOOL onHint){
+    void (^hintHandler)(BOOL) = ^(BOOL onHint){
         if(onHint){
             [[LYIntroductionHelper shared] dismissIntroduction]; //Dissmiss the introduction tutorial
             NSLog(@"Tap on hint");
@@ -47,7 +47,8 @@
             NSLog(@"Not Tap on hint");
         }
         
-    }];
+    };
+    [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 hintText:@"This is an introduction tutorial by LYInrtoduction. Please tap the button." showNow:YES tapOnHint:hintHandler];
     
     /* Another usage
      
