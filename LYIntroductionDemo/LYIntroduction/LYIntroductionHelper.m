@@ -66,7 +66,7 @@ static LYIntroductionHelper *defaultHelper = nil;
     }else{
         self.introductionView.alpha = 0;
         [[self getCurrentVC].view addSubview:self.introductionView];
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.4 animations:^{
             self.introductionView.alpha = 1;
         } completion:^(BOOL finished){
             self.introductionView.alpha = 1;
@@ -78,7 +78,7 @@ static LYIntroductionHelper *defaultHelper = nil;
     if(!self.isAnimated){
         [self.introductionView removeFromSuperview];
     }else{
-        [UIView animateWithDuration:1 animations:^{
+        [UIView animateWithDuration:0.4 animations:^{
             self.introductionView.alpha = 0;
         } completion:^(BOOL finished){
             [self.introductionView removeFromSuperview];
