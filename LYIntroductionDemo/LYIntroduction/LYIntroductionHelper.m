@@ -61,11 +61,29 @@ static LYIntroductionHelper *defaultHelper = nil;
 }
 
 - (void)showIntroduction {
-    [[self getCurrentVC].view addSubview:self.introductionView];
+    if(!self.isAnimated){
+        [[self getCurrentVC].view addSubview:self.introductionView];
+    }else{
+        self.introductionView.alpha = 0;
+        [[self getCurrentVC].view addSubview:self.introductionView];
+        [UIView animateWithDuration:0.5 animations:^{
+            self.introductionView.alpha = 1;
+        } completion:^(BOOL finished){
+            self.introductionView.alpha = 1;
+        }];
+    }
 }
 
 - (void)dismissIntroduction {
-    [self.introductionView removeFromSuperview];
+    if(!self.isAnimated){
+        [self.introductionView removeFromSuperview];
+    }else{
+        [UIView animateWithDuration:1 animations:^{
+            self.introductionView.alpha = 0;
+        } completion:^(BOOL finished){
+            [self.introductionView removeFromSuperview];
+        }];
+    }
 }
 
 - (void)reset {
@@ -90,6 +108,7 @@ static LYIntroductionHelper *defaultHelper = nil;
         self.introductionView.delegate = defaultHelper;
         _hintBorderScale = defaultHintBorderScale;
         _hintCornerRadius = defaultHintCornerRadius;
+        _isAnimated = YES;
     }
     return self;
 }

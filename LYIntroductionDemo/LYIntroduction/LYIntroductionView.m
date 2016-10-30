@@ -22,13 +22,6 @@
 @implementation LYIntroductionView
 
 @synthesize baseBackgroundColor = _baseBackgroundColor;
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -38,7 +31,7 @@
     return self;
 }
 
-- (void)hintViewUpdateWithFrame:(CGRect)frame borderColor:(UIColor*)bColor backgroundColor:(UIColor*)bgColor cornerRadius:(CGFloat)cornerRadius text:(NSString*)text{
+- (void)hintViewUpdateWithFrame:(CGRect)frame borderColor:(UIColor*)bColor backgroundColor:(UIColor*)bgColor cornerRadius:(CGFloat)cornerRadius text:(NSString*)text {
     [[self.hintView.layer.sublayers lastObject]removeFromSuperlayer];
     self.hintView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     [self.hintView setDashLineBorderWithColor:bColor background:bgColor cornerRadius:cornerRadius];
@@ -118,7 +111,6 @@
     if(_hintLabel == nil){
         _hintLabel = [[UILabel alloc] init];
         _hintLabel.adjustsFontSizeToFitWidth = YES;
-//        _hintLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [_hintLabel setNumberOfLines:0];
     }
     return _hintLabel;

@@ -18,14 +18,6 @@ static const CGFloat lineWidth = 2.f;
 
 @implementation UIBorderImageView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 - (void)setDashLineBorderWithColor:(UIColor *)color background:(UIColor *)bgColor cornerRadius:(CGFloat)cornerRadius{
     [self.dashBorder removeFromSuperlayer];
     self.dashBorder.strokeColor = [color CGColor];

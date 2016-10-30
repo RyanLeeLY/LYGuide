@@ -34,6 +34,7 @@
 @property (strong, nonatomic) UIColor *hintBorderColor;
 @property (strong, nonatomic) UIColor *hintBackgroundColor;
 @property (strong, nonatomic) UIColor *baseBackgroundColor;
+@property (nonatomic, assign) BOOL isAnimated;
 
 
 @end

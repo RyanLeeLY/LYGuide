@@ -4,8 +4,16 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
 ## Usage
 ```objective-c
 - (void)viewDidAppear:(BOOL)animated{
-    [[LYIntroductionHelper shared]addHintViewWithPositionX:0.5 Y:0.5 widthRatio:0.1 heightRatio:0.1 showNow:YES tapOnHint:^(BOOL onHint){
+    [LYIntroductionHelper shared].hintBorderScale = 1.5f;
+    [LYIntroductionHelper shared].hintCornerRadius = 20.f;
+    [LYIntroductionHelper shared].hintBackgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
+    [LYIntroductionHelper shared].hintBorderColor = [UIColor redColor];
+    [LYIntroductionHelper shared].baseBackgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
+    
+    // Set the hint's position and the tap-Event callback block.
+    [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 hintText:@"This is an introduction tutorial by LYInrtoduction. Please tap the button." showNow:YES tapOnHint:^(BOOL onHint){
         if(onHint){
+            [[LYIntroductionHelper shared] dismissIntroduction]; //Dissmiss the introduction tutorial
             NSLog(@"Tap on hint");
         }else{
             NSLog(@"Not Tap on hint");
@@ -13,15 +21,16 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
         
     }];
     
-    [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 showNow:YES tapOnHint:^(BOOL onHint){
-        if(onHint){
-            NSLog(@"Tap on hint");
-        }else{
-            NSLog(@"Not Tap on hint");
-        }
-        
-    }];
-//    [[LYIntroductionHelper shared] dismissIntroduction];
+    /* Another usage
+     
+     [[LYIntroductionHelper shared]addHintViewWithPositionX:0.5 Y:0.5 widthRatio:0.1 heightRatio:0.1 showNow:YES tapOnHint:^(BOOL onHint){
+     if(onHint){
+     NSLog(@"Tap on hint");
+     }else{
+     NSLog(@"Not Tap on hint");
+     }
+     }];
+     */
 }
 
 ```
