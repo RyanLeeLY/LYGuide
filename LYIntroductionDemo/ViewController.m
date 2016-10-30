@@ -29,9 +29,9 @@
         }else{
             NSLog(@"Not Tap on hint");
         }
-        
     }];
-    
+
+    /*
     [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 showNow:YES tapOnHint:^(BOOL onHint){
         if(onHint){
             NSLog(@"Tap on hint");
@@ -40,6 +40,7 @@
         }
         
     }];
+     */
 //    [[LYIntroductionHelper shared] dismissIntroduction];
 }
 
