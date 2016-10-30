@@ -48,7 +48,7 @@
         
     };// tapHandler
     
-    NSString *hintText = @"This is an introduction tutorial by LYInrtoduction. Please tap the button."; //hintText
+    NSString *hintText = @"This is an introduction tutorial by LYInrtoduction. Please tap the button.This is an introduction tutorial by LYInrtoduction. Please tap the button.This is an introduction tutorial by LYInrtoduction. Please tap the button.This is an introduction tutorial by LYInrtoduction. Please tap the button."; //hintText
     
     // Set the hint's position and the tap-Event callback block.
     [[LYIntroductionHelper shared] addHintViewWithTargetView:self.button1 hintText:hintText showNow:YES tapOnHint:tapHandler];

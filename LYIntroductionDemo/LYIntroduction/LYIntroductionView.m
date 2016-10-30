@@ -59,7 +59,7 @@
     paragraphstyle.lineBreakMode=NSLineBreakByWordWrapping;
     NSDictionary *dic=@{NSFontAttributeName:self.hintLabel.font,NSParagraphStyleAttributeName:paragraphstyle.copy};
 //    NSDictionary *dic=@{NSFontAttributeName:self.hintLabel.font};
-    CGRect rect=[self.hintLabel.text boundingRectWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
+    CGRect rect=[self.hintLabel.text boundingRectWithSize:CGSizeMake(self.frame.size.width*0.85, self.frame.size.height*0.85) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
     
     // Calculat the position according to the hintViewFrame.
     CGPoint point = CGPointZero;
