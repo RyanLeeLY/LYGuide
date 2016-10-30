@@ -3,7 +3,7 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
 ***
 ## Usage
 ```obj-c
-    /* Set property to customize your introduction tutorial && Each property has default value.So it's OK if don't set any property.
+    /* Set property to customize your introduction tutorial && Each property has default value.So it's OK if you don't set any property.
      */
 //    [LYIntroductionHelper shared].hintBorderScale = 1.5f;
 //    [LYIntroductionHelper shared].hintCornerRadius = 20.f;
