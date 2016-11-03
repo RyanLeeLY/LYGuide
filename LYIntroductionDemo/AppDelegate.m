@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LYGuide.h"
 
 @interface AppDelegate ()
 

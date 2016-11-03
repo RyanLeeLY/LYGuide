@@ -18,7 +18,11 @@
 
 @property (nonatomic, weak) id<LYIntroductionDelegate> delegate;
 
-- (void)hintViewUpdateWithFrame:(CGRect)frame borderColor:(UIColor*)bColor backgroundColor:(UIColor*)bgColor cornerRadius:(CGFloat)cornerRadius text:(NSString*)text; 
+- (void)hintViewUpdateWithFrame:(CGRect)frame
+                    borderColor:(UIColor*)bColor
+                backgroundColor:(UIColor*)bgColor
+                   cornerRadius:(CGFloat)cornerRadius
+                           text:(NSString*)text;
 
 @property (strong, nonatomic) UIColor *baseBackgroundColor;
 @property (strong, nonatomic) UILabel *hintLabel;

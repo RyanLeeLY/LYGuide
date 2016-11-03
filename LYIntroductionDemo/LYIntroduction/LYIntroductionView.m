@@ -31,7 +31,12 @@
     return self;
 }
 
-- (void)hintViewUpdateWithFrame:(CGRect)frame borderColor:(UIColor*)bColor backgroundColor:(UIColor*)bgColor cornerRadius:(CGFloat)cornerRadius text:(NSString*)text {
+- (void)hintViewUpdateWithFrame:(CGRect)frame
+                    borderColor:(UIColor*)bColor
+                backgroundColor:(UIColor*)bgColor
+                   cornerRadius:(CGFloat)cornerRadius
+                           text:(NSString*)text
+{
     [[self.hintView.layer.sublayers lastObject]removeFromSuperlayer];
     self.hintView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     [self.hintView setDashLineBorderWithColor:bColor background:bgColor cornerRadius:cornerRadius];
@@ -45,15 +50,15 @@
 //    [self.introductionView setImage:[UIImage imageNamed:@""]];
 }
 
-- (void)tapOnHintView{
+- (void)tapOnHintView {
     [self.delegate tapEventOnHintView:true];
 }
 
-- (void)tapNotOnHintView{
+- (void)tapNotOnHintView {
     [self.delegate tapEventOnHintView:false];
 }
 
-- (CGRect)calculateHintLabelFrameWithHintViewFrame:(CGRect)hvFrame{
+- (CGRect)calculateHintLabelFrameWithHintViewFrame:(CGRect)hvFrame {
     // Calculate the size according to the label's font, text, style...
     NSMutableParagraphStyle *paragraphstyle=[[NSMutableParagraphStyle alloc]init];
     paragraphstyle.lineBreakMode=NSLineBreakByWordWrapping;
@@ -74,7 +79,7 @@
 }
 
 #pragma getter && setter
-- (UIColor *)baseBackgroundColor{
+- (UIColor *)baseBackgroundColor {
     if(_baseBackgroundColor == nil){
         _baseBackgroundColor = [UIColor clearColor];
     }
@@ -97,9 +102,9 @@
     return _backgroundView;
 }
 
-- (UIImageView *)hintView{
+- (UIImageView *)hintView {
     if(_hintView == nil){
-        _hintView = [[UIBorderImageView alloc]init];
+        _hintView = [[UIBorderImageView alloc] init];
         _hintView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnHintView)];
         [self.hintView addGestureRecognizer:tapGesture];
@@ -107,7 +112,7 @@
     return _hintView;
 }
 
-- (UILabel *)hintLabel{
+- (UILabel *)hintLabel {
     if(_hintLabel == nil){
         _hintLabel = [[UILabel alloc] init];
         _hintLabel.adjustsFontSizeToFitWidth = YES;

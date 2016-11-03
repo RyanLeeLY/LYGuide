@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A04ACE81DC72FBF0014D1AB /* LYGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A04ACE71DC72FBF0014D1AB /* LYGuide.m */; };
+		8A04ACEB1DC795C00014D1AB /* LYGuideConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A04ACEA1DC795C00014D1AB /* LYGuideConfig.m */; };
+		8A04ACF11DCB48310014D1AB /* LYGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A04ACF01DCB48310014D1AB /* LYGuideManager.m */; };
 		8A329EFA1DC4D46600194C51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329EF91DC4D46600194C51 /* main.m */; };
 		8A329EFD1DC4D46600194C51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329EFC1DC4D46600194C51 /* AppDelegate.m */; };
 		8A329F001DC4D46600194C51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329EFF1DC4D46600194C51 /* ViewController.m */; };
@@ -15,7 +18,6 @@
 		8A329F081DC4D46600194C51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A329F061DC4D46600194C51 /* LaunchScreen.storyboard */; };
 		8A329F131DC4D46600194C51 /* LYIntroductionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F121DC4D46600194C51 /* LYIntroductionDemoTests.m */; };
 		8A329F1E1DC4D46600194C51 /* LYIntroductionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F1D1DC4D46600194C51 /* LYIntroductionDemoUITests.m */; };
-		8A329F541DC539CD00194C51 /* LYIntroductionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F4D1DC539CD00194C51 /* LYIntroductionHelper.m */; };
 		8A329F551DC539CD00194C51 /* LYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */; };
 		8A329F561DC539CD00194C51 /* UIBorderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F511DC539CD00194C51 /* UIBorderImageView.m */; };
 		8A329F571DC539CD00194C51 /* UIView+BorderPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F531DC539CD00194C51 /* UIView+BorderPattern.m */; };
@@ -39,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A04ACE61DC72F9C0014D1AB /* LYGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYGuide.h; sourceTree = "<group>"; };
+		8A04ACE71DC72FBF0014D1AB /* LYGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYGuide.m; sourceTree = "<group>"; };
+		8A04ACE91DC795C00014D1AB /* LYGuideConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYGuideConfig.h; sourceTree = "<group>"; };
+		8A04ACEA1DC795C00014D1AB /* LYGuideConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYGuideConfig.m; sourceTree = "<group>"; };
+		8A04ACEF1DCB48310014D1AB /* LYGuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYGuideManager.h; sourceTree = "<group>"; };
+		8A04ACF01DCB48310014D1AB /* LYGuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYGuideManager.m; sourceTree = "<group>"; };
 		8A329EF51DC4D46600194C51 /* LYIntroductionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYIntroductionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A329EF91DC4D46600194C51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8A329EFB1DC4D46600194C51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,8 +63,6 @@
 		8A329F191DC4D46600194C51 /* LYIntroductionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYIntroductionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A329F1D1DC4D46600194C51 /* LYIntroductionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionDemoUITests.m; sourceTree = "<group>"; };
 		8A329F1F1DC4D46600194C51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8A329F4C1DC539CD00194C51 /* LYIntroductionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYIntroductionHelper.h; sourceTree = "<group>"; };
-		8A329F4D1DC539CD00194C51 /* LYIntroductionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionHelper.m; sourceTree = "<group>"; };
 		8A329F4E1DC539CD00194C51 /* LYIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYIntroductionView.h; sourceTree = "<group>"; };
 		8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionView.m; sourceTree = "<group>"; };
 		8A329F501DC539CD00194C51 /* UIBorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBorderImageView.h; sourceTree = "<group>"; };
@@ -164,8 +170,12 @@
 		8A329F4B1DC539CD00194C51 /* LYIntroduction */ = {
 			isa = PBXGroup;
 			children = (
-				8A329F4C1DC539CD00194C51 /* LYIntroductionHelper.h */,
-				8A329F4D1DC539CD00194C51 /* LYIntroductionHelper.m */,
+				8A04ACE61DC72F9C0014D1AB /* LYGuide.h */,
+				8A04ACE71DC72FBF0014D1AB /* LYGuide.m */,
+				8A04ACE91DC795C00014D1AB /* LYGuideConfig.h */,
+				8A04ACEA1DC795C00014D1AB /* LYGuideConfig.m */,
+				8A04ACEF1DCB48310014D1AB /* LYGuideManager.h */,
+				8A04ACF01DCB48310014D1AB /* LYGuideManager.m */,
 				8A329F4E1DC539CD00194C51 /* LYIntroductionView.h */,
 				8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */,
 				8A329F501DC539CD00194C51 /* UIBorderImageView.h */,
@@ -310,12 +320,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A329F571DC539CD00194C51 /* UIView+BorderPattern.m in Sources */,
-				8A329F541DC539CD00194C51 /* LYIntroductionHelper.m in Sources */,
+				8A04ACF11DCB48310014D1AB /* LYGuideManager.m in Sources */,
+				8A04ACEB1DC795C00014D1AB /* LYGuideConfig.m in Sources */,
 				8A329F001DC4D46600194C51 /* ViewController.m in Sources */,
 				8A329F561DC539CD00194C51 /* UIBorderImageView.m in Sources */,
 				8A329EFD1DC4D46600194C51 /* AppDelegate.m in Sources */,
 				8A329F551DC539CD00194C51 /* LYIntroductionView.m in Sources */,
 				8A329EFA1DC4D46600194C51 /* main.m in Sources */,
+				8A04ACE81DC72FBF0014D1AB /* LYGuide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +559,7 @@
 				8A329F241DC4D46600194C51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A329F251DC4D46600194C51 /* Build configuration list for PBXNativeTarget "LYIntroductionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +568,7 @@
 				8A329F271DC4D46600194C51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A329F281DC4D46600194C51 /* Build configuration list for PBXNativeTarget "LYIntroductionDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +577,7 @@
 				8A329F2A1DC4D46600194C51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

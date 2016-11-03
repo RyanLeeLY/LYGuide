@@ -23,12 +23,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwL-6S-RYX">
-                                        <frame key="frameInset" minX="97" minY="49" width="46" height="30"/>
+                                        <frame key="frameInset" minX="38" minY="49" width="39" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="guide">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
-                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xL6-7Z-oG1"/>
+                                            <action selector="button1Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sdd-QA-ZSY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ5-to-yBS">
+                                        <frame key="frameInset" minX="167" minY="49" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="guides">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="button2Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fcq-Io-Dg2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -39,6 +52,7 @@
                     </view>
                     <connections>
                         <outlet property="button1" destination="vwL-6S-RYX" id="3Rz-Tu-N9M"/>
+                        <outlet property="button2" destination="EQ5-to-yBS" id="e6V-dp-igs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
