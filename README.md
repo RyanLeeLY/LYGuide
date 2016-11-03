@@ -53,6 +53,6 @@ So it's OK if don't set any property.
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/0.png)
 #### LYIntroduction View(效果展示)
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/1.png)
-![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/gif0.png)
+![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/gif0.gif)
 #### Self-adaptaion（自适应）
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/4.png)
