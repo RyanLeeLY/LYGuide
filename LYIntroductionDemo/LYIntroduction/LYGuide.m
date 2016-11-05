@@ -154,17 +154,6 @@
     return _textColor;
 }
 
-//- (UIColor *)baseBackgroundColor{
-//    if(_baseBackgroundColor == nil){
-//        _baseBackgroundColor = RGBA(169,169,169,0.5);
-//    }
-//    return _baseBackgroundColor;
-//}
-
-//- (void)setBaseBackgroundColor:(UIColor *)newBaseBackgroundColor{
-//    _introductionView.baseBackgroundColor = newBaseBackgroundColor;
-//}
-
 
 #pragma LYIntroductionDelegate
 - (void) tapEventOnHintView:(BOOL)onHintView{

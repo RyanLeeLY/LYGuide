@@ -42,7 +42,7 @@ static LYGuideManager *defaultManager = nil;
             [guide show];
             result = YES;
             *stop = YES;
-            if(idx == ([guides count]-1) || 1==1){
+            if(idx == ([guides count]-1)){
                 LYGuidesCompletionBlock completion = [self.guidesBlockDic objectForKey:key];
                 completion(YES);
             }

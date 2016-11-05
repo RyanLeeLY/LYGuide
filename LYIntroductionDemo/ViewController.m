@@ -72,7 +72,7 @@
         
     }];
     [LYGuide registerGuides:[NSArray arrayWithObjects:g1,g2,g3,nil] from:self completion:^(BOOL finished){
-        NSLog(@"hahaha");
+        NSLog(@"Guides Finished");
     }];
 }
 
