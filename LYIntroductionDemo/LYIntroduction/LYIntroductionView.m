@@ -64,7 +64,23 @@
     paragraphstyle.lineBreakMode=NSLineBreakByWordWrapping;
     NSDictionary *dic=@{NSFontAttributeName:self.hintLabel.font,NSParagraphStyleAttributeName:paragraphstyle.copy};
 //    NSDictionary *dic=@{NSFontAttributeName:self.hintLabel.font};
-    CGRect rect=[self.hintLabel.text boundingRectWithSize:CGSizeMake(self.frame.size.width*0.85, self.frame.size.height*0.85) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
+    
+    CGFloat maxWidth, maxHeight;
+    if(hvFrame.origin.y+(hvFrame.size.height/2) < self.frame.size.height/2){
+        // Text is under the hintView
+        maxHeight = self.frame.size.height - (hvFrame.origin.y + hvFrame.size.height);
+    }else{
+        // Text is above the hintView
+        maxHeight = hvFrame.origin.y;
+    }
+    if(hvFrame.origin.x+(hvFrame.size.width/2) < self.frame.size.width/2){
+        // Text's leading = hintView's leading
+        maxWidth = self.frame.size.width - hvFrame.origin.x;
+    }else{
+        // Text's leading = hintView's Tailing
+        maxWidth = hvFrame.origin.x + hvFrame.size.width;
+    }
+    CGRect rect=[self.hintLabel.text boundingRectWithSize:CGSizeMake(maxWidth*0.9, maxHeight*0.9) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
     
     // Calculat the position according to the hintViewFrame.
     CGPoint point = CGPointZero;
@@ -74,6 +90,12 @@
     }else{
         // Text is above the hintView
         point = CGPointMake((self.frame.size.width - rect.size.width)/2, hvFrame.origin.y - rect.size.height-10);
+    }
+    if(hvFrame.origin.x+(hvFrame.size.width/2) < self.frame.size.width/2){
+        // Text's leading = hintView's leading
+        point.x = hvFrame.origin.x;
+    }else{
+        point.x = hvFrame.origin.x - (rect.size.width - hvFrame.size.width);
     }
     return CGRectMake(point.x, point.y, rect.size.width, rect.size.height);
 }

@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 @class LYGuide;
+typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 
 @interface LYGuideManager : NSObject
 + (LYGuideManager *)shared;
 - (BOOL)showNextFrom:(id)obj;
 - (void)registerGuides:(NSArray<LYGuide *>*)guides
-                  from:(id)obj;
+                  from:(id)obj
+            completion:(LYGuidesCompletionBlock)block;
 @end

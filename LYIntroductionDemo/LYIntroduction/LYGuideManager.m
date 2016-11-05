@@ -12,7 +12,8 @@
 NSString * const kLYGuidePrefix = @"com.ryanleely.LYIntroduction";
 @interface LYGuideManager()
 
-@property (strong, nonatomic) NSDictionary *guidesDic;
+@property (strong, nonatomic) NSMutableDictionary *guidesDic;
+@property (strong, nonatomic) NSMutableDictionary *guidesBlockDic;
 @end
 
 
@@ -25,6 +26,7 @@ static LYGuideManager *defaultManager = nil;
         if(defaultManager == nil){
             defaultManager = [[LYGuideManager alloc] init];
             defaultManager.guidesDic = [[NSMutableDictionary alloc] init];
+            defaultManager.guidesBlockDic = [[NSMutableDictionary alloc] init];
         }
     } );
     return defaultManager;
@@ -36,10 +38,14 @@ static LYGuideManager *defaultManager = nil;
     NSArray<LYGuide *> *guides = [self.guidesDic objectForKey:key];
     __block BOOL result = NO;
     [guides enumerateObjectsUsingBlock:^(LYGuide *guide, NSUInteger idx, BOOL *stop) {
-        if(guide.displayed==NO){
+        if(guide.displayed == NO){
             [guide show];
             result = YES;
             *stop = YES;
+            if(idx == ([guides count]-1) || 1==1){
+                LYGuidesCompletionBlock completion = [self.guidesBlockDic objectForKey:key];
+                completion(YES);
+            }
         }
     }];
     return result;
@@ -47,9 +53,11 @@ static LYGuideManager *defaultManager = nil;
 
 - (void)registerGuides:(NSArray<LYGuide *>*)guides
                   from:(id)obj
+            completion:(LYGuidesCompletionBlock)block
 {
     NSString *className = [NSString stringWithUTF8String:object_getClassName(obj)];
     NSString *key = [kLYGuidePrefix stringByAppendingString:className];
     [self.guidesDic setValue:guides forKey:key];
+    [self.guidesBlockDic setValue:block forKey:key];
 }
 @end

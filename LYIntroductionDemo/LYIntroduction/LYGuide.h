@@ -30,7 +30,7 @@ typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 
 + (void)registerGuides:(NSArray <LYGuide *>*)guides
                   from:(id)obj
-            completion:(LYGuidesCompletionBlock)completion;
+            completion:(LYGuidesCompletionBlock)block;
 
 + (LYGuideConfig *)defaultConfig;
 

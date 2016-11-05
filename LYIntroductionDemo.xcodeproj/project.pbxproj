@@ -20,7 +20,6 @@
 		8A329F1E1DC4D46600194C51 /* LYIntroductionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F1D1DC4D46600194C51 /* LYIntroductionDemoUITests.m */; };
 		8A329F551DC539CD00194C51 /* LYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */; };
 		8A329F561DC539CD00194C51 /* UIBorderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F511DC539CD00194C51 /* UIBorderImageView.m */; };
-		8A329F571DC539CD00194C51 /* UIView+BorderPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F531DC539CD00194C51 /* UIView+BorderPattern.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +66,6 @@
 		8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionView.m; sourceTree = "<group>"; };
 		8A329F501DC539CD00194C51 /* UIBorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBorderImageView.h; sourceTree = "<group>"; };
 		8A329F511DC539CD00194C51 /* UIBorderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBorderImageView.m; sourceTree = "<group>"; };
-		8A329F521DC539CD00194C51 /* UIView+BorderPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BorderPattern.h"; sourceTree = "<group>"; };
-		8A329F531DC539CD00194C51 /* UIView+BorderPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BorderPattern.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +177,6 @@
 				8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */,
 				8A329F501DC539CD00194C51 /* UIBorderImageView.h */,
 				8A329F511DC539CD00194C51 /* UIBorderImageView.m */,
-				8A329F521DC539CD00194C51 /* UIView+BorderPattern.h */,
-				8A329F531DC539CD00194C51 /* UIView+BorderPattern.m */,
 			);
 			path = LYIntroduction;
 			sourceTree = "<group>";
@@ -319,7 +314,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A329F571DC539CD00194C51 /* UIView+BorderPattern.m in Sources */,
 				8A04ACF11DCB48310014D1AB /* LYGuideManager.m in Sources */,
 				8A04ACEB1DC795C00014D1AB /* LYGuideConfig.m in Sources */,
 				8A329F001DC4D46600194C51 /* ViewController.m in Sources */,
