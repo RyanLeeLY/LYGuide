@@ -23,6 +23,8 @@ typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic, retain) UIColor *hintColor;
 @property (nonatomic, retain) UIColor *baseBackgroundColor;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) UIColor *textColor;
 
 + (instancetype)guideWithText:(NSString *)text
                        target:(CGRect)rect

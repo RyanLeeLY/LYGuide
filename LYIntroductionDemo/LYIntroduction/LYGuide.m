@@ -30,7 +30,8 @@
     LYGuide *instance = [[self alloc] init];
     instance.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     CGRect newScaleRect = CGRectInset(rect, -(instance.borderScale-1.0f)*rect.size.width, -(instance.borderScale-1.0f)*rect.size.height);
-    [instance.introductionView hintViewUpdateWithFrame:newScaleRect borderColor:instance.borderColor backgroundColor:instance.hintColor cornerRadius:instance.cornerRadius text:text];
+    instance.introductionView.hintLabel.font = instance.font;
+    [instance.introductionView hintViewUpdateWithFrame:newScaleRect borderColor:instance.borderColor hintColor:instance.hintColor baseBackgroundColor:instance.baseBackgroundColor cornerRadius:instance.cornerRadius text:text textColor:instance.textColor];
     [instance addSubview:instance.introductionView];
     
     instance.guideHandler = block;
@@ -100,7 +101,6 @@
 - (LYIntroductionView *)introductionView {
     if(_introductionView == nil){
         _introductionView = [[LYIntroductionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-        _introductionView.baseBackgroundColor = self.baseBackgroundColor;
     }
     return _introductionView;
 }
@@ -140,8 +140,18 @@
     return _baseBackgroundColor;
 }
 
-- (void)setBaseBackgroundColor:(UIColor *)newBaseBackgroundColor{
-    _introductionView.baseBackgroundColor = newBaseBackgroundColor;
+- (UIFont *)font{
+    if(_font == nil){
+        _font = [LYGuideConfig shared].font;
+    }
+    return _font;
+}
+
+- (UIColor *)textColor{
+    if(_textColor == nil){
+        _textColor = [LYGuideConfig shared].textColor;
+    }
+    return _textColor;
 }
 
 //- (UIColor *)baseBackgroundColor{

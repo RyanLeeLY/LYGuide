@@ -29,6 +29,8 @@
 //    [[LYGuide defaultConfig] setBorderColor:[UIColor redColor]];
 //    [[LYGuide defaultConfig] setCornerRadius:20.f];
 //    [[LYGuide defaultConfig] setBorderScale:1.8f];
+//    [[LYGuide defaultConfig] setFont:[UIFont fontWithName:@"GillSans-BoldItalic" size:17]];
+//    [[LYGuide defaultConfig] setTextColor:[UIColor redColor]];
     [self registerGuides];
 }
 - (IBAction)button1Pressed:(UIButton *)sender {

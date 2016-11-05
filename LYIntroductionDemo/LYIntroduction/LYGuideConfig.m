@@ -52,7 +52,7 @@ static LYGuideConfig *defaultConfig = nil;
 
 - (UIColor *)hintColor{
     if(_hintColor == nil){
-        _hintColor = RGBA(35, 173, 229, 0.2);
+        _hintColor = [UIColor clearColor];
     }
     return _hintColor;
 }
@@ -62,6 +62,20 @@ static LYGuideConfig *defaultConfig = nil;
         _baseBackgroundColor = RGBA(0,0,0,0.3);
     }
     return _baseBackgroundColor;
+}
+
+- (UIFont *)font{
+    if(_font == nil){
+        _font = [UIFont systemFontOfSize:17];
+    }
+    return _font;
+}
+
+- (UIColor *)textColor{
+    if(_textColor == nil){
+        _textColor = [UIColor blackColor];
+    }
+    return _textColor;
 }
 
 @end

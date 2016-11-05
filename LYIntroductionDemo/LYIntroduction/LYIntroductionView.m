@@ -21,7 +21,6 @@
 
 @implementation LYIntroductionView
 
-@synthesize baseBackgroundColor = _baseBackgroundColor;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -32,18 +31,31 @@
 }
 
 - (void)hintViewUpdateWithFrame:(CGRect)frame
-                    borderColor:(UIColor*)bColor
-                backgroundColor:(UIColor*)bgColor
+                    borderColor:(UIColor *)bColor
+                      hintColor:(UIColor *)hColor
+            baseBackgroundColor:(UIColor *)bbgcolor
                    cornerRadius:(CGFloat)cornerRadius
-                           text:(NSString*)text
+                           text:(NSString *)text
+                      textColor:(UIColor *)tColor
 {
     [[self.hintView.layer.sublayers lastObject]removeFromSuperlayer];
     self.hintView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
-    [self.hintView setDashLineBorderWithColor:bColor background:bgColor cornerRadius:cornerRadius];
+    [self.hintView setDashLineBorderWithColor:bColor background:hColor cornerRadius:cornerRadius];
+    self.backgroundView.backgroundColor = bbgcolor;
+    
+    // Caculate the mask
+    CGRect noMaskRect = CGRectInset(frame, frame.size.width*0.05, frame.size.height*0.05);
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.frame];
+    [path appendPath:[[UIBezierPath bezierPathWithRoundedRect:noMaskRect cornerRadius:cornerRadius] bezierPathByReversingPath]];
+    CAShapeLayer *mask = [CAShapeLayer layer];
+    mask.path = path.CGPath;
+    
+    [self.backgroundView.layer setMask:mask];
     [self addSubview:self.hintView];
     
     if(text != nil){
         self.hintLabel.text = text;
+        self.hintLabel.textColor = tColor;
         self.hintLabel.frame = [self calculateHintLabelFrameWithHintViewFrame:self.hintView.frame];
         [self addSubview:_hintLabel];
     }
@@ -80,16 +92,16 @@
         // Text's leading = hintView's Tailing
         maxWidth = hvFrame.origin.x + hvFrame.size.width;
     }
-    CGRect rect=[self.hintLabel.text boundingRectWithSize:CGSizeMake(maxWidth*0.9, maxHeight*0.9) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
+    CGRect rect=[self.hintLabel.text boundingRectWithSize:CGSizeMake(maxWidth*0.9, maxHeight-(hvFrame.size.height*0.2)*0.9) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
     
     // Calculat the position according to the hintViewFrame.
     CGPoint point = CGPointZero;
     if(hvFrame.origin.y+(hvFrame.size.height/2) < self.frame.size.height/2){
         // Text is under the hintView
-        point = CGPointMake((self.frame.size.width - rect.size.width)/2, hvFrame.origin.y + hvFrame.size.height+10);
+        point.y = hvFrame.origin.y + hvFrame.size.height*1.2;
     }else{
         // Text is above the hintView
-        point = CGPointMake((self.frame.size.width - rect.size.width)/2, hvFrame.origin.y - rect.size.height-10);
+        point.y = hvFrame.origin.y - rect.size.height*1.2;
     }
     if(hvFrame.origin.x+(hvFrame.size.width/2) < self.frame.size.width/2){
         // Text's leading = hintView's leading
@@ -101,22 +113,10 @@
 }
 
 #pragma getter && setter
-- (UIColor *)baseBackgroundColor {
-    if(_baseBackgroundColor == nil){
-        _baseBackgroundColor = [UIColor clearColor];
-    }
-    return _baseBackgroundColor;
-}
-
-- (void)setBaseBackgroundColor:(UIColor *)newBaseBackgroundColor{
-    _baseBackgroundColor = newBaseBackgroundColor;
-    self.backgroundView.backgroundColor = newBaseBackgroundColor;
-}
 
 - (UIView *)backgroundView {
     if(_backgroundView == nil){
         _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height)];
-        _backgroundView.backgroundColor = self.backgroundColor;
         _backgroundView.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapNotOnHintView)];
         [_backgroundView addGestureRecognizer:tapGesture];

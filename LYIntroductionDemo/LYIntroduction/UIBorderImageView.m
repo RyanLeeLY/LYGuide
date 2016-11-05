@@ -12,8 +12,6 @@ static const CGFloat lineWidth = 2.f;
 
 @interface UIBorderImageView()
 
-@property (strong,nonatomic) CAShapeLayer *dashBorder;
-
 @end
 
 @implementation UIBorderImageView
