@@ -47,8 +47,28 @@ So it's OK if don't set any property.
     [[LYGuide defaultConfig] setBorderColor:[UIColor redColor]];
     [[LYGuide defaultConfig] setCornerRadius:20.f];
     [[LYGuide defaultConfig] setBorderScale:1.8f];
+    // ...
 ```
 ***
+
+## More Deatails
+#### Event-Passthrough
+* If you want you own views under the hint to receive the touch-events, set the value to NO. The default value is YES. That means your views can't receive any touch-events.
+
+
+```obj-c
+    [[LYGuide defaultConfig] setIntercepted:NO];
+```
+
+#### Animation
+* If you don't want animation, set the value to NO.
+
+
+```obj-c
+    [[LYGuide defaultConfig] setAnimated:NO];
+```
+
+
 ## Demo
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/0.png)
 #### LYIntroduction View(效果展示)

@@ -50,6 +50,7 @@
     CAShapeLayer *mask = [CAShapeLayer layer];
     mask.path = path.CGPath;
     
+    [self.layer setMask:mask];
     [self.backgroundView.layer setMask:mask];
     [self addSubview:self.hintView];
     
@@ -111,6 +112,7 @@
     }
     return CGRectMake(point.x, point.y, rect.size.width, rect.size.height);
 }
+
 
 #pragma getter && setter
 

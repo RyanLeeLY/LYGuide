@@ -17,8 +17,9 @@ typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 //@property (nonatomic, assign) NSInteger priority;
 
 //@property (nonatomic, assign) BOOL onceOnly; // default YES
+@property (nonatomic, assign)  BOOL intercepted;
 @property (nonatomic, assign, getter=isAnimated) BOOL animated;
-@property (nonatomic, assign, setter=setBorderScale:) CGFloat borderScale;
+@property (nonatomic, assign) CGFloat borderScale;
 @property (nonatomic, assign) CGFloat cornerRadius;
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic, retain) UIColor *hintColor;

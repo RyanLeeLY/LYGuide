@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) LYIntroductionView *introductionView;
 @property (copy, nonatomic) LYGuideHandler guideHandler;
+@property (nonatomic, assign) CGRect hintRect;
 
 @end
 @implementation LYGuide
@@ -30,9 +31,11 @@
     LYGuide *instance = [[self alloc] init];
     instance.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     CGRect newScaleRect = CGRectInset(rect, -(instance.borderScale-1.0f)*rect.size.width, -(instance.borderScale-1.0f)*rect.size.height);
+    instance.hintRect = newScaleRect;   //hintView Rect
     instance.introductionView.hintLabel.font = instance.font;
     [instance.introductionView hintViewUpdateWithFrame:newScaleRect borderColor:instance.borderColor hintColor:instance.hintColor baseBackgroundColor:instance.baseBackgroundColor cornerRadius:instance.cornerRadius text:text textColor:instance.textColor];
     [instance addSubview:instance.introductionView];
+//    instance.userInteractionEnabled = NO;
     
     instance.guideHandler = block;
     instance.introductionView.delegate = instance;
@@ -44,7 +47,8 @@
     if (self) {
         _borderScale = [LYGuideConfig shared].borderScale;
         _cornerRadius = [LYGuideConfig shared].cornerRadius;
-        _animated = YES;
+        _intercepted = [LYGuideConfig shared].intercepted;
+        _animated = [LYGuideConfig shared].animated;
         _displayed = NO;
     }
     return self;
@@ -96,6 +100,16 @@
     }
 }
 
+#pragma Hit-Test
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    if(!self.intercepted){
+        if(CGRectContainsPoint(self.hintRect, point)){
+            self.guideHandler(self, YES);
+            return nil;
+        }
+    }
+    return [super hitTest:point withEvent:event];
+}
 
 #pragma getter && setter
 - (LYIntroductionView *)introductionView {
@@ -157,7 +171,14 @@
 
 #pragma LYIntroductionDelegate
 - (void) tapEventOnHintView:(BOOL)onHintView{
-    self.guideHandler(self, onHintView);
+    if(self.intercepted){
+        self.guideHandler(self, onHintView);
+    }else{
+        //If it is not intercepted, call the guideHandler only when the tap-gesture is not on hintView;
+        if(!onHintView){
+            self.guideHandler(self, onHintView);
+        }
+    }
 }
 
 @end

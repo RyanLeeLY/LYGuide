@@ -30,7 +30,8 @@
 //    [[LYGuide defaultConfig] setCornerRadius:20.f];
 //    [[LYGuide defaultConfig] setBorderScale:1.8f];
 //    [[LYGuide defaultConfig] setFont:[UIFont fontWithName:@"GillSans-BoldItalic" size:17]];
-//    [[LYGuide defaultConfig] setTextColor:[UIColor redColor]];
+//    [[LYGuide defaultConfig] setTextColor:[UIColor whiteColor]];
+    [[LYGuide defaultConfig] setIntercepted:NO];
     [self registerGuides];
 }
 - (IBAction)button1Pressed:(UIButton *)sender {

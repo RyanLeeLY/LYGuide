@@ -17,6 +17,8 @@
 @implementation LYGuideConfig
 static const CGFloat kDefaultHintBorderScale = 1.3f;
 static const CGFloat kDefaultHintCornerRadius = 10.f;
+static const BOOL kDefaultAnimated = YES;
+static const BOOL kDefaultIntercepted = YES;
 
 static LYGuideConfig *defaultConfig = nil;
 + (LYGuideConfig *)shared{
@@ -24,9 +26,21 @@ static LYGuideConfig *defaultConfig = nil;
     dispatch_once(&token,^{
         if(defaultConfig == nil){
             defaultConfig = [[LYGuideConfig alloc] init];
+            defaultConfig.animated = kDefaultAnimated;
+            defaultConfig.intercepted = kDefaultIntercepted;
+            defaultConfig.borderScale = kDefaultHintBorderScale;
+            defaultConfig.cornerRadius = kDefaultHintCornerRadius;
         }
     } );
     return defaultConfig;
+}
+
+- (BOOL)intercepted {
+    return _intercepted;
+}
+
+- (BOOL)animated {
+    return _animated;
 }
 
 - (CGFloat)borderScale {
@@ -73,7 +87,7 @@ static LYGuideConfig *defaultConfig = nil;
 
 - (UIColor *)textColor{
     if(_textColor == nil){
-        _textColor = [UIColor blackColor];
+        _textColor = [UIColor whiteColor];
     }
     return _textColor;
 }

@@ -169,14 +169,14 @@
 			children = (
 				8A04ACE61DC72F9C0014D1AB /* LYGuide.h */,
 				8A04ACE71DC72FBF0014D1AB /* LYGuide.m */,
-				8A04ACE91DC795C00014D1AB /* LYGuideConfig.h */,
-				8A04ACEA1DC795C00014D1AB /* LYGuideConfig.m */,
 				8A04ACEF1DCB48310014D1AB /* LYGuideManager.h */,
 				8A04ACF01DCB48310014D1AB /* LYGuideManager.m */,
 				8A329F4E1DC539CD00194C51 /* LYIntroductionView.h */,
 				8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */,
 				8A329F501DC539CD00194C51 /* UIBorderImageView.h */,
 				8A329F511DC539CD00194C51 /* UIBorderImageView.m */,
+				8A04ACE91DC795C00014D1AB /* LYGuideConfig.h */,
+				8A04ACEA1DC795C00014D1AB /* LYGuideConfig.m */,
 			);
 			path = LYIntroduction;
 			sourceTree = "<group>";
