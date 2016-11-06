@@ -13,7 +13,9 @@
 #import "LYIntroductionView.h"
 #import "LYGuideManager.h"
 
-@interface LYGuide()<LYIntroductionDelegate, UIAppearanceContainer>
+@interface LYGuide()<LYIntroductionDelegate, UIAppearanceContainer>{
+    NSTimeInterval lastStamp;
+}
 
 @property (strong, nonatomic) LYIntroductionView *introductionView;
 @property (copy, nonatomic) LYGuideHandler guideHandler;
@@ -103,10 +105,11 @@
 #pragma Hit-Test
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
     if(!self.intercepted){
-        if(CGRectContainsPoint(self.hintRect, point)){
+        if(CGRectContainsPoint(self.hintRect, point) && event.timestamp!=lastStamp){
             self.guideHandler(self, YES);
             return nil;
         }
+        lastStamp = event.timestamp;
     }
     return [super hitTest:point withEvent:event];
 }
