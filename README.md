@@ -1,7 +1,7 @@
 # LYIntroduction
 LYIntroduction is an iOS class group that you can easily add Introduction Tutorials to your App or hint something important on the screen. LYIntroduction可以轻松地为你的App添加引导说明，你可以用它引导用户去关注屏幕上的重要视图或信息。
 
-## Easy to use
+## Easy to use（用法简单）
 ```obj-c
    [[LYGuide guideWithText:@"Test" target:self.button1.ly_absolute_frame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){
@@ -14,7 +14,7 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
 ```
 * You just need to complete the callback block (Be called when touch-up event happened) and show it.
 
-## More Introduction Tutorials
+## Introduction Tutorials Group（一组引导说明）
 ```obj-c
 	LYGuide *g1 = [LYGuide guideWithText:@"Test1" target:self.button2.ly_absolute_frame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){
@@ -39,7 +39,7 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
     [LYGuide showNextFrom:self];
 ```
 
-## Customized Appearance
+## Customized Appearance（可定制外观）
 ```obj-c
 /* Set property to customize your introduction tutorial && Each property has default value.
 So it's OK if don't set any property.
@@ -51,8 +51,8 @@ So it's OK if don't set any property.
 ```
 ***
 
-## More Deatails
-#### Event-Passthrough
+## More Deatails（更多细节）
+#### Event-Passthrough（事件传递）
 * If you want you own views under the hint to receive the touch-events, set the value to NO. The default value is YES. That means your views can't receive any touch-events.
 
 
@@ -60,7 +60,7 @@ So it's OK if don't set any property.
     [[LYGuide defaultConfig] setIntercepted:NO];
 ```
 
-#### Animation
+#### Animation（动画）
 * If you don't want animation, set the value to NO.
 
 
