@@ -105,6 +105,7 @@
 #pragma Hit-Test
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
     if(!self.intercepted){
+        // HitTest will run 2 times, so we compare the timeStamp with the lastStamp.
         if(CGRectContainsPoint(self.hintRect, point) && event.timestamp!=lastStamp){
             self.guideHandler(self, YES);
             return nil;
