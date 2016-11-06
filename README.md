@@ -34,7 +34,7 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
         }
     }];
 
-    [LYGuide registerGuides:[NSArray arrayWithObjects:g1,g2,nil] from:self completion:nil];
+    [LYGuide registerGuides:[NSArray arrayWithObjects:g1,g2,nil] target:self completion:nil]; // Resgister guides for target(ViewController).
     
     [LYGuide showNextFrom:self];
 ```

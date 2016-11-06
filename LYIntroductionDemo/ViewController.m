@@ -73,7 +73,7 @@
         
     }];
     
-    [LYGuide registerGuides:[NSArray arrayWithObjects:g1,g2,g3,nil] from:self completion:^(BOOL finished){
+    [LYGuide registerGuides:[NSArray arrayWithObjects:g1,g2,g3,nil] target:self completion:^(BOOL finished){
         NSLog(@"Guides Finished");
     }];
 }

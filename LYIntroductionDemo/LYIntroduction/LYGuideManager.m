@@ -52,7 +52,7 @@ static LYGuideManager *defaultManager = nil;
 }
 
 - (void)registerGuides:(NSArray<LYGuide *>*)guides
-                  from:(id)obj
+                  target:(id)obj
             completion:(LYGuidesCompletionBlock)block
 {
     NSString *className = [NSString stringWithUTF8String:object_getClassName(obj)];

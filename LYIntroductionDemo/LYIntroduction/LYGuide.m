@@ -56,10 +56,10 @@
 
 // priority won't work there.
 + (void)registerGuides:(NSArray <LYGuide *>*)guides
-                  from:(id)obj
+                  target:(id)obj
         completion:(LYGuidesCompletionBlock)block
 {
-    [[LYGuideManager shared] registerGuides:guides from:obj completion:block];
+    [[LYGuideManager shared] registerGuides:guides target:obj completion:block];
 }
 
 + (void)showNextFrom:(id)obj {
