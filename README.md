@@ -1,5 +1,5 @@
 # LYIntroduction
-LYIntroduction is an iOS class group that you can easily add Introduction Tutorial to your App or hint something important on the screen.
+LYIntroduction is an iOS class group that you can easily add Introduction Tutorials to your App or hint something important on the screen.
 
 ## Easy to use
 ```obj-c
@@ -14,7 +14,7 @@ LYIntroduction is an iOS class group that you can easily add Introduction Tutori
 ```
 * You just need to complete the callback block (Be called when touch-up event happened) and show it.
 
-## More Introduction Tutorial
+## More Introduction Tutorials
 ```obj-c
 	LYGuide *g1 = [LYGuide guideWithText:@"Test1" target:self.button2.ly_absolute_frame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){
