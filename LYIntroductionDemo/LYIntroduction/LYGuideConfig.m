@@ -28,7 +28,7 @@ static LYGuideConfig *defaultConfig = nil;
             defaultConfig = [[LYGuideConfig alloc] init];
             defaultConfig.animated = kDefaultAnimated;
             defaultConfig.intercepted = kDefaultIntercepted;
-            defaultConfig.borderScale = kDefaultHintBorderScale;
+            defaultConfig.borderScale = CGSizeMake(kDefaultHintBorderScale, kDefaultHintBorderScale);
             defaultConfig.cornerRadius = kDefaultHintCornerRadius;
         }
     } );
@@ -43,9 +43,9 @@ static LYGuideConfig *defaultConfig = nil;
     return _animated;
 }
 
-- (CGFloat)borderScale {
-    if(_borderScale <= 0){
-        _borderScale = kDefaultHintBorderScale;
+- (CGSize)borderScale {
+    if(CGSizeEqualToSize(_borderScale, CGSizeZero)){
+        _borderScale = CGSizeMake(kDefaultHintBorderScale, kDefaultHintBorderScale);
     }
     return _borderScale;
 }

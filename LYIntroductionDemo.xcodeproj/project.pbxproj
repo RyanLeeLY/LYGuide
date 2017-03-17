@@ -20,6 +20,7 @@
 		8A329F1E1DC4D46600194C51 /* LYIntroductionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F1D1DC4D46600194C51 /* LYIntroductionDemoUITests.m */; };
 		8A329F551DC539CD00194C51 /* LYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */; };
 		8A329F561DC539CD00194C51 /* UIBorderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A329F511DC539CD00194C51 /* UIBorderImageView.m */; };
+		8ADED81F1DEA13F30090B6B7 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADED81E1DEA13F30090B6B7 /* MyTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		8A329F4F1DC539CD00194C51 /* LYIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionView.m; sourceTree = "<group>"; };
 		8A329F501DC539CD00194C51 /* UIBorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBorderImageView.h; sourceTree = "<group>"; };
 		8A329F511DC539CD00194C51 /* UIBorderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBorderImageView.m; sourceTree = "<group>"; };
+		8ADED81D1DEA13F30090B6B7 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		8ADED81E1DEA13F30090B6B7 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				8A329F2E1DC4D4B600194C51 /* LYIntroductionDemo */,
 				8A329EFB1DC4D46600194C51 /* AppDelegate.h */,
 				8A329EFC1DC4D46600194C51 /* AppDelegate.m */,
+				8ADED81D1DEA13F30090B6B7 /* MyTableViewController.h */,
+				8ADED81E1DEA13F30090B6B7 /* MyTableViewController.m */,
 				8A329EFE1DC4D46600194C51 /* ViewController.h */,
 				8A329EFF1DC4D46600194C51 /* ViewController.m */,
 				8A329F011DC4D46600194C51 /* Main.storyboard */,
@@ -320,6 +325,7 @@
 				8A329F561DC539CD00194C51 /* UIBorderImageView.m in Sources */,
 				8A329EFD1DC4D46600194C51 /* AppDelegate.m in Sources */,
 				8A329F551DC539CD00194C51 /* LYIntroductionView.m in Sources */,
+				8ADED81F1DEA13F30090B6B7 /* MyTableViewController.m in Sources */,
 				8A329EFA1DC4D46600194C51 /* main.m in Sources */,
 				8A04ACE81DC72FBF0014D1AB /* LYGuide.m in Sources */,
 			);

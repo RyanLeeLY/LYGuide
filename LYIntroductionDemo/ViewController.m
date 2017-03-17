@@ -28,18 +28,21 @@
      */
 //    [[LYGuide defaultConfig] setBorderColor:[UIColor redColor]];
 //    [[LYGuide defaultConfig] setCornerRadius:20.f];
-//    [[LYGuide defaultConfig] setBorderScale:1.8f];
+//    [[LYGuide defaultConfig] setBorderScale:CGSizeMake(1.8, 1.8)];
 //    [[LYGuide defaultConfig] setFont:[UIFont fontWithName:@"GillSans-BoldItalic" size:17]];
 //    [[LYGuide defaultConfig] setTextColor:[UIColor whiteColor]];
-    [[LYGuide defaultConfig] setIntercepted:NO];
+//    [[LYGuide defaultConfig] setIntercepted:NO];
+    
+    [self guide];
     [self registerGuides];
 }
+
 - (IBAction)button1Pressed:(UIButton *)sender {
     [self guide];
 }
 
 - (IBAction)button2Pressed:(UIButton *)sender {
-    [LYGuide showNextFrom:self];
+    [LYGuide showNextFrom:[self class]];
 }
 
 - (void)registerGuides {
@@ -73,7 +76,7 @@
         
     }];
     
-    [LYGuide registerGuides:[NSArray arrayWithObjects:g1,g2,g3,nil] target:self completion:^(BOOL finished){
+    [LYGuide registerGuides:@[g1, g2, g3] target:[self class] completion:^(BOOL finished){
         NSLog(@"Guides Finished");
     }];
 }

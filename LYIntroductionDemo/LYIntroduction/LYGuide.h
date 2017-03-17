@@ -13,31 +13,32 @@ typedef void (^LYGuideHandler)(LYGuide  *guide, BOOL onHint);
 typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 
 @interface LYGuide : UIView
-@property (nonatomic, assign, getter=isDisplayed, readonly) BOOL displayed;
+@property (nonatomic, assign, getter=isDisplayed) BOOL displayed;
 //@property (nonatomic, assign) NSInteger priority;
 
 //@property (nonatomic, assign) BOOL onceOnly; // default YES
 @property (nonatomic, assign)  BOOL intercepted;
 @property (nonatomic, assign, getter=isAnimated) BOOL animated;
-@property (nonatomic, assign) CGFloat borderScale;
+@property (nonatomic, assign) CGSize borderScale;
 @property (nonatomic, assign) CGFloat cornerRadius;
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic, retain) UIColor *hintColor;
 @property (nonatomic, retain) UIColor *baseBackgroundColor;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, copy) NSString *text;
 
 + (instancetype)guideWithText:(NSString *)text
                        target:(CGRect)rect
                       handler:(LYGuideHandler)block;
 
 + (void)registerGuides:(NSArray <LYGuide *>*)guides
-                  target:(id)obj
+                  target:(Class)cls
             completion:(LYGuidesCompletionBlock)block;
 
 + (LYGuideConfig *)defaultConfig;
 
-+ (void)showNextFrom:(id)obj;
++ (void)showNextFrom:(Class)cls;
 
 - (void)show;
 

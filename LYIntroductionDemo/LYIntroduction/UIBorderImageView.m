@@ -16,7 +16,7 @@ static const CGFloat lineWidth = 2.f;
 
 @implementation UIBorderImageView
 
-- (void)setDashLineBorderWithColor:(UIColor *)color background:(UIColor *)bgColor cornerRadius:(CGFloat)cornerRadius{
+- (void)setDashLineBorderWithColor:(UIColor *)color background:(UIColor *)bgColor cornerRadius:(CGFloat)cornerRadius {
     [self.dashBorder removeFromSuperlayer];
     self.dashBorder.strokeColor = [color CGColor];
     self.dashBorder.fillColor = [bgColor CGColor];

@@ -14,6 +14,6 @@ typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 + (LYGuideManager *)shared;
 - (BOOL)showNextFrom:(id)obj;
 - (void)registerGuides:(NSArray<LYGuide *>*)guides
-                  target:(id)obj
+                  target:(Class)cls
             completion:(LYGuidesCompletionBlock)block;
 @end

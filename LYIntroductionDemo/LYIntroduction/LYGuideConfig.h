@@ -14,7 +14,7 @@
 //@property (nonatomic, assign) BOOL onceOnly; // default YES
 @property (nonatomic, assign) BOOL animated;
 @property (nonatomic, assign) BOOL intercepted;
-@property (nonatomic, assign) CGFloat borderScale;
+@property (nonatomic, assign) CGSize borderScale;
 @property (nonatomic, assign) CGFloat cornerRadius;
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic, retain) UIColor *hintColor;

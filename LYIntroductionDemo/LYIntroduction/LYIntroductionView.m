@@ -36,15 +36,15 @@
             baseBackgroundColor:(UIColor *)bbgcolor
                    cornerRadius:(CGFloat)cornerRadius
                            text:(NSString *)text
-                      textColor:(UIColor *)tColor
-{
+                      textColor:(UIColor *)tColor {
     [[self.hintView.layer.sublayers lastObject]removeFromSuperlayer];
     self.hintView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
     [self.hintView setDashLineBorderWithColor:bColor background:hColor cornerRadius:cornerRadius];
     self.backgroundView.backgroundColor = bbgcolor;
     
     // Caculate the mask
-    CGRect noMaskRect = CGRectInset(frame, frame.size.width*0.05, frame.size.height*0.05);
+    CGFloat shortSide = frame.size.width < frame.size.height ? frame.size.width : frame.size.height;
+    CGRect noMaskRect = CGRectInset(frame, shortSide*0.05, shortSide*0.05);
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.frame];
     [path appendPath:[[UIBezierPath bezierPathWithRoundedRect:noMaskRect cornerRadius:cornerRadius] bezierPathByReversingPath]];
     CAShapeLayer *mask = [CAShapeLayer layer];
@@ -114,7 +114,7 @@
 }
 
 
-#pragma getter && setter
+#pragma mark - getter && setter
 
 - (UIView *)backgroundView {
     if(_backgroundView == nil){
