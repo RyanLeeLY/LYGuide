@@ -8,6 +8,7 @@
 
 #import "LYGuideManager.h"
 #import "LYGuide.h"
+#import "LYGuideConfig.h"
 
 NSString const* kLYGuidePrefix = @"com.ryanleely.LYIntroduction";
 @interface LYGuideManager()

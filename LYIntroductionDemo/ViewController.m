@@ -32,6 +32,7 @@
 //    [[LYGuide defaultConfig] setFont:[UIFont fontWithName:@"GillSans-BoldItalic" size:17]];
 //    [[LYGuide defaultConfig] setTextColor:[UIColor whiteColor]];
 //    [[LYGuide defaultConfig] setIntercepted:NO];
+    [[LYGuide defaultConfig] setLoop:YES];
     
     [self guide];
     [self registerGuides];
@@ -83,14 +84,18 @@
 
 
 - (void)guide {
-    [[LYGuide guideWithText:@"Test" target:self.button1.lyg_absoluteFrame handler:^(LYGuide *guide, BOOL onHint) {
-        if(onHint){
-            [guide dismiss];  //Dissmiss the introduction tutorial
-            NSLog(@"Tap on hint");
-        }else{
-            NSLog(@"Not Tap on hint");
-        }
-    }] show];
+    static LYGuide *oneGuide;
+    if (!oneGuide) {
+        oneGuide = [LYGuide guideWithText:@"Test" target:self.button1.lyg_absoluteFrame handler:^(LYGuide *guide, BOOL onHint) {
+            if(onHint){
+                [guide dismiss];  //Dissmiss the introduction tutorial
+                NSLog(@"Tap on hint");
+            }else{
+                NSLog(@"Not Tap on hint");
+            }
+        }];
+    }
+    [oneGuide show];
  
 }
 

@@ -10,6 +10,7 @@
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 #import "LYGuide.h"
+#import "LYGuideConfig.h"
 #import <objc/runtime.h>
 #import "LYIntroductionView.h"
 #import "LYGuideManager.h"

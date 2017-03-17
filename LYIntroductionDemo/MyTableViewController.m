@@ -32,7 +32,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSIndexPath *index =  [NSIndexPath indexPathForItem:5 inSection:0];
+    NSIndexPath *index =  [NSIndexPath indexPathForItem:3 inSection:0];
     
     LYGuide *guide = [LYGuide guideWithText:@"You can use it in UITableView. Just like this!" target:[self.tableView lyg_getCellFrom:index].lyg_absoluteFrame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){

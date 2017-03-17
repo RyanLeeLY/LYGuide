@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LYGuideConfig.h"
+@class LYGuideConfig;
 @class LYGuide;
-typedef void (^LYGuideHandler)(LYGuide  *guide, BOOL onHint);
+typedef void (^LYGuideHandler)(LYGuide *guide, BOOL onHint);
 typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 
 @interface LYGuide : UIView
