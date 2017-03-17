@@ -10,15 +10,17 @@
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 #import "LYGuide.h"
+#import <objc/runtime.h>
 #import "LYIntroductionView.h"
 #import "LYGuideManager.h"
+
+static char (* const kGuideHandler) = "kGuideHandler";
 
 @interface LYGuide()<LYIntroductionDelegate, UIAppearanceContainer>{
     NSTimeInterval lastStamp;
 }
 
 @property (strong, nonatomic) LYIntroductionView *introductionView;
-@property (copy, nonatomic) LYGuideHandler guideHandler;
 @property (nonatomic, assign) CGRect hintRect;
 @property (nonatomic, assign) CGRect originRect;
 
@@ -36,7 +38,10 @@
 + (instancetype)guideWithText:(NSString *)text
                        target:(CGRect)rect
                       handler:(LYGuideHandler)block {
-    LYGuide *instance = [[self alloc] init];
+    if (CGRectEqualToRect(rect, CGRectZero) || CGRectEqualToRect(rect, CGRectNull)) {
+        @throw [NSException exceptionWithName:@"LYGuideException" reason:@"Guide rect can not be CGRectZero or CGRectNull" userInfo:nil];
+    }
+    LYGuide *instance = [[self alloc] initPrivate];
     instance.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     instance.originRect = rect;
     CGRect newScaleRect = CGRectInset(rect, -(instance.borderScale.width-1.0f)*rect.size.width, -(instance.borderScale.height-1.0f)*rect.size.height);
@@ -45,15 +50,15 @@
     instance.text = text;
     [instance.introductionView hintViewUpdateWithFrame:newScaleRect borderColor:instance.borderColor hintColor:instance.hintColor baseBackgroundColor:instance.baseBackgroundColor cornerRadius:instance.cornerRadius text:text textColor:instance.textColor];
     [instance addSubview:instance.introductionView];
-//    instance.userInteractionEnabled = NO;
     
-    instance.guideHandler = block;
+//    instance.guideHandler = block;
+    objc_setAssociatedObject(instance, kGuideHandler, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
     instance.introductionView.delegate = instance;
     
     return instance;
 }
 
-- (instancetype)init {
+- (instancetype)initPrivate {
     self = [super init];
     if (self) {
         _borderScale = [LYGuideConfig shared].borderScale;
@@ -63,6 +68,11 @@
         _displayed = NO;
     }
     return self;
+}
+
+- (instancetype)init {
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
 }
 
 // priority won't work there.
@@ -115,12 +125,38 @@
     if(!self.intercepted){
         // HitTest will run 2 times, so we compare the timeStamp with the lastStamp.
         if(CGRectContainsPoint(self.hintRect, point) && event.timestamp!=lastStamp){
-            self.guideHandler(self, YES);
+            void (^guideHandler) (LYGuide *, BOOL) = objc_getAssociatedObject(self, kGuideHandler);
+            if (guideHandler) {
+                guideHandler (self, YES);
+            }
             return nil;
         }
         lastStamp = event.timestamp;
     }
     return [super hitTest:point withEvent:event];
+}
+
+#pragma mark - private
+- (void)reload {
+    [self.introductionView hintViewUpdateWithFrame:self.hintRect borderColor:self.borderColor hintColor:self.hintColor baseBackgroundColor:self.baseBackgroundColor cornerRadius:self.cornerRadius text:self.text textColor:self.textColor];
+}
+
+#pragma mark - LYIntroductionDelegate
+- (void) tapEventOnHintView:(BOOL)onHintView {
+    if(self.intercepted){
+        void (^guideHandler) (LYGuide *, BOOL) = objc_getAssociatedObject(self, kGuideHandler);
+        if (guideHandler) {
+            guideHandler (self, onHintView);
+        }
+    }else{
+        //If it is not intercepted, call the guideHandler only when the tap-gesture is not on hintView;
+        if(!onHintView){
+            void (^guideHandler) (LYGuide *, BOOL) = objc_getAssociatedObject(self, kGuideHandler);
+            if (guideHandler) {
+                guideHandler (self, onHintView);
+            }
+        }
+    }
 }
 
 #pragma mark - getter && setter
@@ -237,33 +273,24 @@
     [self reload];
 }
 
-#pragma mark - private
-- (void)reload {
-    [self.introductionView hintViewUpdateWithFrame:self.hintRect borderColor:self.borderColor hintColor:self.hintColor baseBackgroundColor:self.baseBackgroundColor cornerRadius:self.cornerRadius text:self.text textColor:self.textColor];
-}
-
-#pragma mark - LYIntroductionDelegate
-- (void) tapEventOnHintView:(BOOL)onHintView {
-    if(self.intercepted){
-        self.guideHandler(self, onHintView);
-    }else{
-        //If it is not intercepted, call the guideHandler only when the tap-gesture is not on hintView;
-        if(!onHintView){
-            self.guideHandler(self, onHintView);
-        }
-    }
-}
-
 @end
+
 
 #pragma mark - UIView+LYGuide
 @implementation UIView (LYGuide)
 
-- (CGRect)ly_absolute_frame {
+- (CGRect)lyg_absoluteFrame {
     return [self convertRect:self.bounds toView:self.window];
 }
 @end
 
+#pragma mark - UITableView+LYGuide
+@implementation UITableView (LYGuide)
 
+- (UIView *)lyg_getCellFrom:(NSIndexPath *)indexPath {
+    NSIndexPath *index =  [NSIndexPath indexPathForItem:indexPath.row inSection:indexPath.section];
+    return [self cellForRowAtIndexPath:index];
+}
+@end
 
 

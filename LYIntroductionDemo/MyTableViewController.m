@@ -32,12 +32,9 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    NSIndexPath *index =  [NSIndexPath indexPathForItem:2 inSection:0];
-    UITableViewCell *cell =  [self.tableView cellForRowAtIndexPath:index];
-    NSLog(@"table view cell. %f,%f,%f,%f", cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
-    NSLog(@"table view ly frame cell. %f,%f,%f,%f", cell.ly_absolute_frame.origin.x, cell.ly_absolute_frame.origin.y, cell.ly_absolute_frame.size.width, cell.ly_absolute_frame.size.height);
+    NSIndexPath *index =  [NSIndexPath indexPathForItem:5 inSection:0];
     
-    LYGuide *guide = [LYGuide guideWithText:@"Test1Test1Test1Test1Test1" target:cell.ly_absolute_frame handler:^(LYGuide *guide, BOOL onHint) {
+    LYGuide *guide = [LYGuide guideWithText:@"You can use it in UITableView. Just like this!" target:[self.tableView lyg_getCellFrom:index].lyg_absoluteFrame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){
             [guide dismiss];  //Dissmiss the introduction tutorial
             NSLog(@"Tap on hint");
@@ -61,9 +58,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"mycell"];
     if (cell==nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"mycell"];
+        [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"mycell"];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
     return cell;

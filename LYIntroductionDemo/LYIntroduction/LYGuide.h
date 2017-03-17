@@ -21,11 +21,11 @@ typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 @property (nonatomic, assign, getter=isAnimated) BOOL animated;
 @property (nonatomic, assign) CGSize borderScale;
 @property (nonatomic, assign) CGFloat cornerRadius;
-@property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic, retain) UIColor *hintColor;
-@property (nonatomic, retain) UIColor *baseBackgroundColor;
-@property (nonatomic, retain) UIFont *font;
-@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, strong) UIColor *borderColor;
+@property (nonatomic, strong) UIColor *hintColor;
+@property (nonatomic, strong) UIColor *baseBackgroundColor;
+@property (nonatomic, strong) UIFont *font;
+@property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, copy) NSString *text;
 
 + (instancetype)guideWithText:(NSString *)text
@@ -47,10 +47,17 @@ typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 //- (void)showWithPriority:(NSInteger)priority;
 @end
 
+@interface UITableView (LYGuide)
+
+- (UIView *)lyg_getCellFrom:(NSIndexPath *)indexPath;
+@end
 
 @interface UIView (LYGuide)
-@property (nonatomic,readonly) CGRect ly_absolute_frame;
-//- (void)ly_showGuideWithText:(NSString *)text handler:(LYGuideHandler)block;
+
+@property (nonatomic,readonly) CGRect lyg_absoluteFrame;
 @end
+
+
+
 
 

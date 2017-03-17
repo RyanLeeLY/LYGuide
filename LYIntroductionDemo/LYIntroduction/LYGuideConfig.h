@@ -16,10 +16,10 @@
 @property (nonatomic, assign) BOOL intercepted;
 @property (nonatomic, assign) CGSize borderScale;
 @property (nonatomic, assign) CGFloat cornerRadius;
-@property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic, retain) UIColor *hintColor;
-@property (nonatomic, retain) UIColor *baseBackgroundColor;
-@property (nonatomic, retain) UIFont *font;
-@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, strong) UIColor *borderColor;
+@property (nonatomic, strong) UIColor *hintColor;
+@property (nonatomic, strong) UIColor *baseBackgroundColor;
+@property (nonatomic, strong) UIFont *font;
+@property (nonatomic, strong) UIColor *textColor;
 
 @end

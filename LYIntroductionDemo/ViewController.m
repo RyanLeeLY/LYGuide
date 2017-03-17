@@ -46,7 +46,7 @@
 }
 
 - (void)registerGuides {
-    LYGuide *g1 = [LYGuide guideWithText:@"Test1" target:self.button2.ly_absolute_frame handler:^(LYGuide *guide, BOOL onHint) {
+    LYGuide *g1 = [LYGuide guideWithText:@"Test1" target:self.button2.lyg_absoluteFrame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){
             [guide dismiss];  //Dissmiss the introduction tutorial
             NSLog(@"Tap on hint");
@@ -56,7 +56,7 @@
         
     }];
     
-    LYGuide *g2 = [LYGuide guideWithText:@"Test2" target:self.button2.ly_absolute_frame handler:^(LYGuide *guide, BOOL onHint) {
+    LYGuide *g2 = [LYGuide guideWithText:@"Test2" target:self.button2.lyg_absoluteFrame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){
             [guide dismiss];  //Dissmiss the introduction tutorial
             NSLog(@"Tap on hint");
@@ -66,7 +66,7 @@
         
     }];
     
-    LYGuide *g3 = [LYGuide guideWithText:@"Test3:This is an self-adaptaion guide text. Please tap the button \"guides\". This is an self-adaptaion guide text. Please tap the button \"guides\". This is an self-adaptaion guide text. Please tap the button \"guides\"." target:self.button2.ly_absolute_frame handler:^(LYGuide *guide, BOOL onHint) {
+    LYGuide *g3 = [LYGuide guideWithText:@"Test3:This is an self-adaptaion guide text. Please tap the button \"guides\". This is an self-adaptaion guide text. Please tap the button \"guides\". This is an self-adaptaion guide text. Please tap the button \"guides\"." target:self.button2.lyg_absoluteFrame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){
             [guide dismiss];  //Dissmiss the introduction tutorial
             NSLog(@"Tap on hint");
@@ -83,7 +83,7 @@
 
 
 - (void)guide {
-    [[LYGuide guideWithText:@"Test" target:self.button1.ly_absolute_frame handler:^(LYGuide *guide, BOOL onHint) {
+    [[LYGuide guideWithText:@"Test" target:self.button1.lyg_absoluteFrame handler:^(LYGuide *guide, BOOL onHint) {
         if(onHint){
             [guide dismiss];  //Dissmiss the introduction tutorial
             NSLog(@"Tap on hint");
