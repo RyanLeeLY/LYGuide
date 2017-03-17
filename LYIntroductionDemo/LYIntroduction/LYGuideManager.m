@@ -44,8 +44,10 @@ static LYGuideManager *defaultManager = nil;
             if(idx == ([guides count]-1)){
                 LYGuidesCompletionBlock completion = [self.guidesBlockDic objectForKey:key];
                 completion(YES);
-                for (LYGuide *guide in guides) {
-                    [guide setDisplayed:NO];
+                if ([LYGuideConfig shared].isLoop) {
+                    for (LYGuide *guide in guides) {
+                        [guide setDisplayed:NO];
+                    }
                 }
             }
         }

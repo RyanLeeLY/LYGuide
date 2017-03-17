@@ -91,6 +91,9 @@ static char (* const kGuideHandler) = "kGuideHandler";
 }
 
 - (void)show {
+    if (![LYGuideConfig shared].isLoop && _displayed==YES) {
+        return;
+    }
     if(!self.isAnimated){
         [[[[[[UIApplication sharedApplication] windows] firstObject] subviews] firstObject] addSubview:self];
     }else{

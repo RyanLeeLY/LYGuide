@@ -19,6 +19,7 @@ static const CGFloat kDefaultHintBorderScale = 1.3f;
 static const CGFloat kDefaultHintCornerRadius = 10.f;
 static const BOOL kDefaultAnimated = YES;
 static const BOOL kDefaultIntercepted = YES;
+static const BOOL kDefaultLoop = YES;
 
 static LYGuideConfig *defaultConfig = nil;
 + (LYGuideConfig *)shared{
@@ -30,17 +31,10 @@ static LYGuideConfig *defaultConfig = nil;
             defaultConfig.intercepted = kDefaultIntercepted;
             defaultConfig.borderScale = CGSizeMake(kDefaultHintBorderScale, kDefaultHintBorderScale);
             defaultConfig.cornerRadius = kDefaultHintCornerRadius;
+            defaultConfig.loop = kDefaultLoop;
         }
     } );
     return defaultConfig;
-}
-
-- (BOOL)intercepted {
-    return _intercepted;
-}
-
-- (BOOL)animated {
-    return _animated;
 }
 
 - (CGSize)borderScale {
