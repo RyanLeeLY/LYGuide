@@ -70,8 +70,8 @@ So it's OK if don't set any property.
 
 
 ## Demo
-![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/0.png)
+![image](https://github.com/RyanLeeLY/LYGuide/blob/master/0.png)
 #### LYGuide View(效果展示)
-![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/1.png)
+![image](https://github.com/RyanLeeLY/LYGuide/blob/master/1.png)
 #### Self-adaptaion（自适应）
-![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/2.png)
+![image](https://github.com/RyanLeeLY/LYGuide/blob/master/2.png)
