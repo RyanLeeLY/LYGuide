@@ -71,7 +71,7 @@ So it's OK if don't set any property.
 
 ## Demo
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/0.png)
-#### LYIntroduction View(效果展示)
+#### LYGuide View(效果展示)
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/1.png)
 #### Self-adaptaion（自适应）
 ![image](https://github.com/RyanLeeLY/LYIntroduction/blob/master/2.png)
