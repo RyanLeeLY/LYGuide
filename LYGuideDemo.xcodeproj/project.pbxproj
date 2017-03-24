@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		8AE6AFD61E84F66200F92E2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6AFD51E84F66200F92E2D /* main.m */; };
 		8AE6AFD91E84F66200F92E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6AFD81E84F66200F92E2D /* AppDelegate.m */; };
-		8AE6AFDC1E84F66200F92E2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6AFDB1E84F66200F92E2D /* ViewController.m */; };
-		8AE6AFDF1E84F66200F92E2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AE6AFDD1E84F66200F92E2D /* Main.storyboard */; };
 		8AE6AFE11E84F66200F92E2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE6AFE01E84F66200F92E2D /* Assets.xcassets */; };
 		8AE6AFE41E84F66200F92E2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AE6AFE21E84F66200F92E2D /* LaunchScreen.storyboard */; };
 		8AE6AFEF1E84F66200F92E2D /* LYGuideDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6AFEE1E84F66200F92E2D /* LYGuideDemoTests.m */; };
 		8AE6AFFA1E84F66200F92E2D /* LYGuideDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6AFF91E84F66200F92E2D /* LYGuideDemoUITests.m */; };
+		8AE6B0121E84F69D00F92E2D /* LYGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6B0091E84F69D00F92E2D /* LYGuide.m */; };
+		8AE6B0131E84F69D00F92E2D /* LYGuideConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6B00B1E84F69D00F92E2D /* LYGuideConfig.m */; };
+		8AE6B0141E84F69D00F92E2D /* LYGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6B00D1E84F69D00F92E2D /* LYGuideManager.m */; };
+		8AE6B0151E84F69D00F92E2D /* LYIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6B00F1E84F69D00F92E2D /* LYIntroductionView.m */; };
+		8AE6B0161E84F69D00F92E2D /* UIBorderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6B0111E84F69D00F92E2D /* UIBorderImageView.m */; };
+		8AE6B01B1E84F6DD00F92E2D /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6B0181E84F6DD00F92E2D /* MyTableViewController.m */; };
+		8AE6B01C1E84F6DD00F92E2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE6B01A1E84F6DD00F92E2D /* ViewController.m */; };
+		8AE6B01E1E84F71C00F92E2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AE6B01D1E84F71C00F92E2D /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +45,6 @@
 		8AE6AFD51E84F66200F92E2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8AE6AFD71E84F66200F92E2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8AE6AFD81E84F66200F92E2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8AE6AFDA1E84F66200F92E2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8AE6AFDB1E84F66200F92E2D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8AE6AFDE1E84F66200F92E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AE6AFE01E84F66200F92E2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AE6AFE31E84F66200F92E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AE6AFE51E84F66200F92E2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +54,21 @@
 		8AE6AFF51E84F66200F92E2D /* LYGuideDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYGuideDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE6AFF91E84F66200F92E2D /* LYGuideDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYGuideDemoUITests.m; sourceTree = "<group>"; };
 		8AE6AFFB1E84F66200F92E2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AE6B0081E84F69D00F92E2D /* LYGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYGuide.h; sourceTree = "<group>"; };
+		8AE6B0091E84F69D00F92E2D /* LYGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYGuide.m; sourceTree = "<group>"; };
+		8AE6B00A1E84F69D00F92E2D /* LYGuideConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYGuideConfig.h; sourceTree = "<group>"; };
+		8AE6B00B1E84F69D00F92E2D /* LYGuideConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYGuideConfig.m; sourceTree = "<group>"; };
+		8AE6B00C1E84F69D00F92E2D /* LYGuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYGuideManager.h; sourceTree = "<group>"; };
+		8AE6B00D1E84F69D00F92E2D /* LYGuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYGuideManager.m; sourceTree = "<group>"; };
+		8AE6B00E1E84F69D00F92E2D /* LYIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYIntroductionView.h; sourceTree = "<group>"; };
+		8AE6B00F1E84F69D00F92E2D /* LYIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYIntroductionView.m; sourceTree = "<group>"; };
+		8AE6B0101E84F69D00F92E2D /* UIBorderImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBorderImageView.h; sourceTree = "<group>"; };
+		8AE6B0111E84F69D00F92E2D /* UIBorderImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBorderImageView.m; sourceTree = "<group>"; };
+		8AE6B0171E84F6DD00F92E2D /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		8AE6B0181E84F6DD00F92E2D /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		8AE6B0191E84F6DD00F92E2D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8AE6B01A1E84F6DD00F92E2D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8AE6B01D1E84F71C00F92E2D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +119,16 @@
 		8AE6AFD31E84F66200F92E2D /* LYGuideDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8AE6B0071E84F69D00F92E2D /* LYGuide */,
 				8AE6AFD71E84F66200F92E2D /* AppDelegate.h */,
 				8AE6AFD81E84F66200F92E2D /* AppDelegate.m */,
-				8AE6AFDA1E84F66200F92E2D /* ViewController.h */,
-				8AE6AFDB1E84F66200F92E2D /* ViewController.m */,
-				8AE6AFDD1E84F66200F92E2D /* Main.storyboard */,
+				8AE6B0171E84F6DD00F92E2D /* MyTableViewController.h */,
+				8AE6B0181E84F6DD00F92E2D /* MyTableViewController.m */,
+				8AE6B0191E84F6DD00F92E2D /* ViewController.h */,
+				8AE6B01A1E84F6DD00F92E2D /* ViewController.m */,
 				8AE6AFE01E84F66200F92E2D /* Assets.xcassets */,
 				8AE6AFE21E84F66200F92E2D /* LaunchScreen.storyboard */,
+				8AE6B01D1E84F71C00F92E2D /* Main.storyboard */,
 				8AE6AFE51E84F66200F92E2D /* Info.plist */,
 				8AE6AFD41E84F66200F92E2D /* Supporting Files */,
 			);
@@ -138,6 +159,24 @@
 				8AE6AFFB1E84F66200F92E2D /* Info.plist */,
 			);
 			path = LYGuideDemoUITests;
+			sourceTree = "<group>";
+		};
+		8AE6B0071E84F69D00F92E2D /* LYGuide */ = {
+			isa = PBXGroup;
+			children = (
+				8AE6B0081E84F69D00F92E2D /* LYGuide.h */,
+				8AE6B0091E84F69D00F92E2D /* LYGuide.m */,
+				8AE6B00A1E84F69D00F92E2D /* LYGuideConfig.h */,
+				8AE6B00B1E84F69D00F92E2D /* LYGuideConfig.m */,
+				8AE6B00C1E84F69D00F92E2D /* LYGuideManager.h */,
+				8AE6B00D1E84F69D00F92E2D /* LYGuideManager.m */,
+				8AE6B00E1E84F69D00F92E2D /* LYIntroductionView.h */,
+				8AE6B00F1E84F69D00F92E2D /* LYIntroductionView.m */,
+				8AE6B0101E84F69D00F92E2D /* UIBorderImageView.h */,
+				8AE6B0111E84F69D00F92E2D /* UIBorderImageView.m */,
+			);
+			name = LYGuide;
+			path = ../LYGuide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +285,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE6B01E1E84F71C00F92E2D /* Main.storyboard in Resources */,
 				8AE6AFE41E84F66200F92E2D /* LaunchScreen.storyboard in Resources */,
 				8AE6AFE11E84F66200F92E2D /* Assets.xcassets in Resources */,
-				8AE6AFDF1E84F66200F92E2D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AE6AFDC1E84F66200F92E2D /* ViewController.m in Sources */,
+				8AE6B01C1E84F6DD00F92E2D /* ViewController.m in Sources */,
+				8AE6B0161E84F69D00F92E2D /* UIBorderImageView.m in Sources */,
+				8AE6B0141E84F69D00F92E2D /* LYGuideManager.m in Sources */,
 				8AE6AFD91E84F66200F92E2D /* AppDelegate.m in Sources */,
+				8AE6B0131E84F69D00F92E2D /* LYGuideConfig.m in Sources */,
 				8AE6AFD61E84F66200F92E2D /* main.m in Sources */,
+				8AE6B0121E84F69D00F92E2D /* LYGuide.m in Sources */,
+				8AE6B0151E84F69D00F92E2D /* LYIntroductionView.m in Sources */,
+				8AE6B01B1E84F6DD00F92E2D /* MyTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,14 +356,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8AE6AFDD1E84F66200F92E2D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8AE6AFDE1E84F66200F92E2D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8AE6AFE21E84F66200F92E2D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

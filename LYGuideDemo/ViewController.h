@@ -1,9 +1,9 @@
 //
 //  ViewController.h
-//  LYGuideDemo
+//  LYIntroductionDemo
 //
-//  Created by 李尧 on 2017/3/24.
-//  Copyright © 2017年 ryanleely. All rights reserved.
+//  Created by 李尧 on 2016/10/29.
+//  Copyright © 2016年 ryanleely. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
