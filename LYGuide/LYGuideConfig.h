@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UIColor *baseBackgroundColor;
 @property (nonatomic, strong) UIFont *font;
 @property (nonatomic, strong) UIColor *textColor;
+/// default value 1. 0 means infinite
 @property (nonatomic, assign) NSInteger repeatCount;
 
 @end

@@ -52,7 +52,6 @@ static char (* const kGuideHandler) = "kGuideHandler";
     [instance.introductionView hintViewUpdateWithFrame:newScaleRect borderColor:instance.borderColor hintColor:instance.hintColor baseBackgroundColor:instance.baseBackgroundColor cornerRadius:instance.cornerRadius text:text textColor:instance.textColor];
     [instance addSubview:instance.introductionView];
     
-//    instance.guideHandler = block;
     objc_setAssociatedObject(instance, kGuideHandler, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
     instance.introductionView.delegate = instance;
     

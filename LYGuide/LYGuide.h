@@ -26,6 +26,7 @@ typedef void (^LYGuidesCompletionBlock)(BOOL isCanceled);
 @property (nonatomic, strong) UIFont *font;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, copy) NSString *text;
+/// default value 1. 0 means infinite
 @property (nonatomic, assign) NSInteger repeatCount;
 @property (nonatomic, assign, readonly) NSInteger currentRepeatCount;
 

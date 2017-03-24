@@ -246,7 +246,7 @@
 				TargetAttributes = {
 					8AE6AFD01E84F66200F92E2D = {
 						CreatedOnToolsVersion = 8.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					8AE6AFE91E84F66200F92E2D = {
 						CreatedOnToolsVersion = 8.2;
@@ -461,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LYGuideDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanleely.LYGuideDemo;
@@ -472,6 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LYGuideDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryanleely.LYGuideDemo;
@@ -544,6 +546,7 @@
 				8AE6B0001E84F66200F92E2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AE6B0011E84F66200F92E2D /* Build configuration list for PBXNativeTarget "LYGuideDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +555,7 @@
 				8AE6B0031E84F66200F92E2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8AE6B0041E84F66200F92E2D /* Build configuration list for PBXNativeTarget "LYGuideDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +564,7 @@
 				8AE6B0061E84F66200F92E2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
