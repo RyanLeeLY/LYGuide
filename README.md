@@ -68,6 +68,9 @@ So it's OK if don't set any property.
     [[LYGuide defaultConfig] setAnimated:NO];
 ```
 
+## CocoaPods
+pod "LYGuide", '0.0.1'
+
 
 ## Demo
 ![image](https://github.com/RyanLeeLY/LYGuide/blob/master/0.png)
